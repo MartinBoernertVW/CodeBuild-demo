@@ -1,0 +1,22 @@
+version: 0.2
+
+phases: 
+    install:
+        runtime-versions:
+            nodejs: latest
+        commands:
+            - echo "Installing packages"
+    pre_build:
+        commands: 
+            - echo "Starting Pre build phase"
+    build:
+        commands:
+            - echo "Starting build phase"
+            - grep -Fq "green;" index.html
+    post_build:
+        commands:
+            - echo "Starting post build phase"
+artifacts:
+  files:
+    - '**/*'
+            
